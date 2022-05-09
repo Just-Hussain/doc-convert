@@ -1,0 +1,22 @@
+version: "3"
+networks:
+  convert:
+    external: true
+    name: convert
+
+services:
+  # your other services
+
+  gotenberg:
+    networks:
+      - convert
+
+    container_name: converter
+    image: thecodingmachine/gotenberg:6
+  
+    environment:
+      - DEFAULT_LISTEN_PORT=4040
+      - DISABLE_GOOGLE_CHROME=1
+    
+    ports:
+      - "4040:4040"
