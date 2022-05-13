@@ -1,0 +1,1 @@
+FROM thecodingmachine/gotenberg:6
