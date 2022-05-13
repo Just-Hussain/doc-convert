@@ -4,7 +4,8 @@
   "info": {
     "singularName": "document",
     "pluralName": "documents",
-    "displayName": "Document"
+    "displayName": "Document",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,19 +13,20 @@
   "pluginOptions": {},
   "attributes": {
     "originalFile": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
-    },
-    "pdfFile": {
+      "required": true,
       "allowedTypes": [
         "files"
-      ],
+      ]
+    },
+    "pdfFile": {
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
     },
     "originalExt": {
       "type": "enumeration",
@@ -42,7 +44,7 @@
         ".pptx",
         ".odp"
       ],
-      "required": true
+      "required": false
     },
     "duration": {
       "type": "decimal"

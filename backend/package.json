@@ -17,6 +17,7 @@
     "@strapi/strapi": "4.1.9",
     "@strapi/utils": "^4.1.9",
     "better-sqlite3": "7.4.6",
+    "filereader": "^0.10.3",
     "gotenberg-js-client": "^0.7.2"
   },
   "author": {
