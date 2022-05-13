@@ -104,13 +104,13 @@ module.exports = createCoreController(
       const pdfBuffer = await stream2buffer(pdfStream);
 
       // write to disk so stupid Strapi can handle uploading it
-      pdfStream.pipe(fs.createWriteStream("../DELETEME.pdf"));
+      pdfStream.pipe(fs.createWriteStream("DELETEME.pdf"));
 
       // upload the pdf file, use its id to tie it to this document instance
       const pdfFile = await strapi.plugins.upload.services.upload.upload({
         data: {},
         files: {
-          path: "../DELETEME.pdf",
+          path: "DELETEME.pdf",
           name: originalFile.name + ".pdf",
           type: "application/pdf",
           size: pdfBuffer.length,
@@ -118,7 +118,7 @@ module.exports = createCoreController(
       });
 
       // delete the file form disk
-      fs.rmSync("../DELETEME.pdf");
+      fs.rmSync("DELETEME.pdf");
 
       // stop timer
       const end = Date.now();
