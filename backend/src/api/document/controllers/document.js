@@ -101,7 +101,6 @@ module.exports = createCoreController(
       const pdfStream = await toPDF({
         [`${originalFile.name}`]: await readFile(originalFile),
       });
-      const pdfBuffer = await stream2buffer(pdfStream);
 
       // write to disk so stupid Strapi can handle uploading it
       pdfStream.pipe(fs.createWriteStream("DELETEME.pdf"));
@@ -113,7 +112,7 @@ module.exports = createCoreController(
           path: "DELETEME.pdf",
           name: originalFile.name + ".pdf",
           type: "application/pdf",
-          size: pdfBuffer.length,
+          size: originalFile.size,
         },
       });
 
