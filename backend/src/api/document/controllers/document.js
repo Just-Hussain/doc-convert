@@ -133,6 +133,7 @@ module.exports = createCoreController(
       // finally create
       const response = await super.create(ctx);
 
+      response.data.attributes.pdfFile = pdfFile;
       return response;
     },
 
