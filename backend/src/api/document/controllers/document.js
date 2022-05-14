@@ -60,7 +60,7 @@ module.exports = createCoreController(
           .query("api::document.document")
           .findMany({
             where: { owner: ctx.state.user.id },
-            populate: { originalFile: true },
+            populate: { originalFile: true, pdfFile: true },
           });
 
         return response;
